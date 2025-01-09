@@ -1,71 +1,68 @@
-/* src/pages/Login.css */
 
-/* Container for the login form */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f9;  /* Light Gray background */
+    background-color: #f4f4f9;  
   }
   
-  /* Style the login form */
+ 
   .login-form {
-    background-color: #fff;  /* White background for the form */
+    background-color: #fff;
     padding: 40px;
-    border-radius: 15px;  /* Rounded corners for the form */
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 320px;
   }
   
-  /* Styling the heading */
+  
   .login-form h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;  /* Dark gray text */
+    color: #333;  
   }
   
-  /* Style for the Material-UI TextField */
+  
   .login-form .MuiTextField-root {
     margin-bottom: 20px;
     width: 100%;
-    border-radius: 10px;  /* Rounded corners for text fields */
+    border-radius: 10px;  
   }
   
-  /* Styling for the TextField with dark red color scheme */
+ 
   .MuiInputBase-root.MuiOutlinedInput-root {
-    border-radius: 10px;  /* Round the edges of the input */
-    background-color: #fff;  /* White background for inputs */
+    border-radius: 10px;  
+    background-color: #fff; 
   }
   
   .MuiInputBase-root.MuiOutlinedInput-root.Mui-focused {
-    border-color: #8B0000;  /* Dark Red color when focused */
+    border-color: #8B0000; 
   }
   
   .MuiOutlinedInput-notchedOutline {
-    border-color: #8B0000;  /* Dark Red border color */
+    border-color: #8B0000;  
   }
-  
-  /* Color for the labels */
+
   .MuiFormLabel-root {
-    color: #333;  /* Dark gray for label text */
+    color: #333;  
   }
   
-  /* Button styling */
+
   .login-form .MuiButton-root {
-    background-color: #8B0000;  /* Dark red button */
+    background-color: #8B0000;  
     color: white;
     padding: 10px;
-    border-radius: 10px;  /* Curved corners for the button */
+    border-radius: 10px;  
     width: 100%;
     font-size: 1.1em;
-    text-transform: none;  /* Prevent button text from being uppercased */
+    text-transform: none;  
     margin-top: 20px;
   }
   
   .login-form .MuiButton-root:hover {
-    background-color: #660000;  /* Darker red on hover */
+    background-color: #660000;  
   }
   span{
     color:#660000;

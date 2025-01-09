@@ -1,0 +1,55 @@
+.App {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f3;
+    color: #333;
+  }
+  
+  .App-header {
+    background-color: #0056a3;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .welcome-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  button {
+    background-color: #0056a3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #004080;
+  }
+  
+  .services-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .services-section li {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0056a3;
+    color: white;
+  }
+  

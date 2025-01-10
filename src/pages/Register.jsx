@@ -11,6 +11,7 @@ function Register() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [nationalId, setNationalId] = useState('');
+  const [maritalStatus, setMaritalStatus] = useState('');
   const [accountType, setAccountType] = useState('');
   const [branch, setBranch] = useState('');
   const [initialDeposit, setInitialDeposit] = useState('');
@@ -32,6 +33,7 @@ function Register() {
     if (!phone) errors.phone = 'Phone number is required';
     if (!email) errors.email = 'Email is required';
     if (!nationalId) errors.nationalId = 'National ID is required';
+    if(!maritalStatus) errors.maritalStatus = 'Marital Status is required'
     if (!accountType) errors.accountType = 'Account type is required';
     if (!branch) errors.branch = 'Branch is required';
     if (!securityQuestion) errors.securityQuestion = 'Security question is required';
@@ -82,6 +84,7 @@ function Register() {
         phone,
         email,
         nationalId,
+        maritalStatus,
         accountType,
         branch,
         initialDeposit,
@@ -139,6 +142,8 @@ function Register() {
               helperText={errors.dob}
             />
               </div>
+
+             <div className="form-row">  
             <TextField
               label="Address"
               variant="outlined"
@@ -151,7 +156,7 @@ function Register() {
             />
         
 
-          <div className="form-row">
+       
             <TextField
               label="Phone Number"
               variant="outlined"
@@ -172,6 +177,8 @@ function Register() {
               error={!!errors.email}
               helperText={errors.email}
             />
+            </div>
+            <div className="form-row">
             <TextField
               label="National ID / Passport"
               variant="outlined"
@@ -182,6 +189,21 @@ function Register() {
               error={!!errors.nationalId}
               helperText={errors.nationalId}
             />
+            <FormControl fullWidth margin="normal" error={!!errors.maritalStatus}>
+              <InputLabel>Marital Status</InputLabel>
+              <Select
+                label="Marital Status"
+                value={maritalStatus}
+                onChange={(e) => setMaritalStatus(e.target.value)}
+              >
+                <MenuItem value="single">Single</MenuItem>
+                <MenuItem value="customary Marriage">Customary Marriage</MenuItem>
+                <MenuItem value="married">Married</MenuItem>
+                <MenuItem value="widowed">Widowed</MenuItem>
+                <MenuItem value="divorced">Divorced</MenuItem>
+                
+              </Select>
+            </FormControl>
           </div>
 
           {/* Account Information */}

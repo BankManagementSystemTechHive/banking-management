@@ -7,12 +7,17 @@ const HomePage = () => {
       <nav className="sidebar">
         <h2 className="sidebar-title">My Bank</h2>
         <ul className="nav-list">
-          <li className="nav-item">View Balance</li>
-          <li className="nav-item">Withdraw</li>
-          <li className="nav-item">Deposit</li>
-          <li className="nav-item">Transfer</li>
+          <button className="nav-button">View Balance</button>
+          <button className="nav-button">Withdraw</button>
+          <button className="nav-button">Deposit</button>
+          <button className="nav-button">Transfer</button>
         </ul>
       </nav>
       <main className="main-content">
         <h1 className="homepage-title">Welcome to My Bank</h1>
-      </
+      </main>
+    </div>
+  );
+};
+
+export default HomePage;

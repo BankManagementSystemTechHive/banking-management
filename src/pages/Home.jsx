@@ -5,7 +5,9 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <nav className="sidebar">
-        <h2 className="sidebar-title">My Bank</h2>
+        <a href="/" className="sidebar-logo">
+          <img src="public\logoPicture.jpeg" alt="My Bank Logo" className="logo" />
+        </a>
         <ul className="nav-list">
           <button className="nav-button">View Balance</button>
           <button className="nav-button">Withdraw</button>

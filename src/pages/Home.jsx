@@ -3,7 +3,7 @@ import './home.css';
 
 const HomePage = () => {
   const [balance, setBalance] = useState(0);
-  const [showBalance, setShowBalance] = useState(false); // State to toggle balance visibility
+  const [showBalance, setShowBalance] = useState(false);
 
   const handleDeposit = () => {
     const input = prompt("Enter the amount to deposit:");
@@ -57,11 +57,51 @@ const HomePage = () => {
   };
 
   const handleViewBalance = () => {
-    setShowBalance(true); // Show the balance when the button is clicked
+    setShowBalance(true);
+  };
+
+  const handleLogout = () => {
+    // Clear all states (if needed)
+    setBalance(0);
+    setShowBalance(false);
+
+    // Redirect to the login page or reload
+    alert("You have been logged out.");
+    window.location.reload(); // Reload the page to simulate a logout
   };
 
   return (
     <div className="homepage">
       <nav className="sidebar">
-        <a href="/" className="sidebar-logo">
-          <img
+       
+        <ul className="nav-list">
+          <button className="nav-button" onClick={handleViewBalance}>
+            View Balance
+          </button>
+          <button className="nav-button withdraw" onClick={handleWithdraw}>
+            Withdraw
+          </button>
+          <button className="nav-button deposit" onClick={handleDeposit}>
+            Deposit
+          </button>
+          <button className="nav-button transfer" onClick={handleTransfer}>
+            Transfer
+          </button>
+        </ul>
+        <button className="nav-button logout" onClick={handleLogout}>
+          Log Out
+        </button>
+      </nav>
+      <main className="main-content">
+      <h1 className="homepage-title">
+  <img src="path-to-your-image.jpg" alt="Tech Investments" className="title-image" />
+  Tech Investments
+</h1>
+
+        {showBalance && <p className="balance-display">Current Balance: R{balance}</p>}
+      </main>
+    </div>
+  );
+};
+
+export default HomePage;

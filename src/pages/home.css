@@ -54,12 +54,20 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
+background-image: url('/public/images/ATM-IMAGE.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
 }
 
 .homepage-title {
-  font-size: 3rem;
+  font-size: 1rem; 
   color: red;
   padding-bottom: 300px;
+  margin-right: 1300px;
+  display: flex;
+  align-items: center;
  
 }
 
@@ -92,4 +100,32 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   font-size: 1.5rem;
   color: #000;
   margin-right: 300px;
+}
+.nav-button.logout {
+  margin-top: auto; /* Push the button to the bottom */
+  background-color: #d9534f;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-button.logout:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+
+.homepage-logo {
+  text-align: center; /* Center the logo horizontally */
+  margin-bottom: 20px; /* Add space below the logo */
+}
+
+.main-logo {
+  max-width: 200px; /* Set max width for the logo */
+  height: auto; /* Ensure aspect ratio is maintained */
+  display: inline-block; /* Make the logo behave like text */
+  vertical-align: middle; /* Align the logo to the center */
+}
+.title-image {
+  width: 30px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+  margin-right: 10px; /* Space between image and text */
 }

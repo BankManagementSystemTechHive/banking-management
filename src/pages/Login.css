@@ -66,8 +66,13 @@
   }
   span{
     color:#660000;
+    font-weight: bold;
+    
   }
   .registerField{
 padding: 10px;
+  }
+  a{
+    text-decoration: none;
   }
   

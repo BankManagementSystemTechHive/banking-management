@@ -51,4 +51,15 @@
       background-color: #c62828;
     }
   }
-  
+
+    span{
+      color:#660000;
+      font-weight: bold;
+      
+    }
+    .backtologin{
+      padding: 10px;
+        }
+        a{
+          text-decoration: none;
+        }

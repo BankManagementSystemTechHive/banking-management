@@ -4,6 +4,7 @@ import { TextField, Button, MenuItem, Select, InputLabel, FormControl } from '@m
 import axios from 'axios';
 
 function Register() {
+  const[title, setTitle] =useState('');
   const [fullName, setFullName] = useState('');
   const [lastName, setLastName] = useState('')
   const [dob, setDob] = useState('');
@@ -12,8 +13,9 @@ function Register() {
   const [email, setEmail] = useState('');
   const [nationalId, setNationalId] = useState('');
   const [maritalStatus, setMaritalStatus] = useState('');
+  const [gender, setGender] = useState('');
   const [accountType, setAccountType] = useState('');
-  const [branch, setBranch] = useState('');
+  const [country, setCountry] = useState('');
   const [initialDeposit, setInitialDeposit] = useState('');
   const [securityQuestion, setSecurityQuestion] = useState('');
   const [securityAnswer, setSecurityAnswer] = useState('');
@@ -26,6 +28,7 @@ function Register() {
     const errors = {};
 
     // Required fields validation
+    if(!title) errors.title ="Title is required "
     if (!fullName) errors.fullName = 'Full name is required';
     if(!lastName) errors.lastName = 'Last name is required'
     if (!dob) errors.dob = 'Date of birth is required';
@@ -34,8 +37,9 @@ function Register() {
     if (!email) errors.email = 'Email is required';
     if (!nationalId) errors.nationalId = 'National ID is required';
     if(!maritalStatus) errors.maritalStatus = 'Marital Status is required'
+    if(!gender) errors.gender ="Gender is required"
     if (!accountType) errors.accountType = 'Account type is required';
-    if (!branch) errors.branch = 'Branch is required';
+    if (!country) errors.country = 'Country is required';
     if (!securityQuestion) errors.securityQuestion = 'Security question is required';
     if (!securityAnswer) errors.securityAnswer = 'Security answer is required';
     if (!password) errors.password = 'Password is required';
@@ -77,6 +81,7 @@ function Register() {
 
     try {
       const response = await axios.post('http://localhost:8080/api/auth/register', {
+        title,
         fullName,
         lastName,
         dob,
@@ -85,8 +90,9 @@ function Register() {
         email,
         nationalId,
         maritalStatus,
+        gender,
         accountType,
-        branch,
+        country,
         initialDeposit,
         securityQuestion,
         securityAnswer,
@@ -101,11 +107,23 @@ function Register() {
   return (
     <div className="register-container">
       <div className="register-form">
-        <h2>Register</h2>
+        <h1>Register</h1>
         <form noValidate autoComplete="off" onSubmit={handleSubmit}>
 
           {/* Personal Information */}
           <div className="form-row">
+
+          <TextField
+              label="Title"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              error={!!errors.title}
+              helperText={errors.title}
+            />
+
             <TextField
               label="Full Name"
               variant="outlined"
@@ -127,7 +145,12 @@ function Register() {
               helperText={errors.lastName}
             />
             
-            <TextField
+          
+              </div>
+
+             <div className="form-row">  
+
+             <TextField
               label="Date of Birth"
               type="date"
               variant="outlined"
@@ -141,9 +164,7 @@ function Register() {
               error={!!errors.dob}
               helperText={errors.dob}
             />
-              </div>
 
-             <div className="form-row">  
             <TextField
               label="Address"
               variant="outlined"
@@ -154,8 +175,6 @@ function Register() {
               error={!!errors.address}
               helperText={errors.address}
             />
-        
-
        
             <TextField
               label="Phone Number"
@@ -167,6 +186,10 @@ function Register() {
               error={!!errors.phone}
               helperText={errors.phone}
             />
+        
+            </div>
+
+            <div className="form-row">
             <TextField
               label="Email"
               variant="outlined"
@@ -177,8 +200,7 @@ function Register() {
               error={!!errors.email}
               helperText={errors.email}
             />
-            </div>
-            <div className="form-row">
+
             <TextField
               label="National ID / Passport"
               variant="outlined"
@@ -208,6 +230,18 @@ function Register() {
 
           {/* Account Information */}
           <div className="form-row">
+          <FormControl fullWidth margin="normal" error={!!errors.gender}>
+              <InputLabel>Gender</InputLabel>
+              <Select
+                label="Gender"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+              >
+                <MenuItem value="male">Male</MenuItem>
+                <MenuItem value="female">Female</MenuItem>
+              </Select>
+            </FormControl>
+
             <FormControl fullWidth margin="normal" error={!!errors.accountType}>
               <InputLabel>Account Type</InputLabel>
               <Select
@@ -220,16 +254,21 @@ function Register() {
               </Select>
             </FormControl>
             <TextField
-              label="Branch"
+              label="country"
               variant="outlined"
               fullWidth
               margin="normal"
-              value={branch}
-              onChange={(e) => setBranch(e.target.value)}
-              error={!!errors.branch}
-              helperText={errors.branch}
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              error={!!errors.country}
+              helperText={errors.country}
             />
-            <TextField
+         
+          </div>
+
+          {/* Security Information */}
+          <div className="form-row">
+          <TextField
               label="Initial Deposit"
               variant="outlined"
               fullWidth
@@ -238,31 +277,7 @@ function Register() {
               onChange={(e) => setInitialDeposit(e.target.value)}
               type="number"
             />
-          </div>
 
-          {/* Security Information */}
-          <div className="form-row">
-            <FormControl fullWidth margin="normal" error={!!errors.securityQuestion}>
-              <InputLabel>Security Question</InputLabel>
-              <Select
-                label="Security Question"
-                value={securityQuestion}
-                onChange={(e) => setSecurityQuestion(e.target.value)}
-              >
-                <MenuItem value="mothers_maiden_name">What is your mother's maiden name?</MenuItem>
-                <MenuItem value="first_pet">What was the name of your first pet?</MenuItem>
-              </Select>
-            </FormControl>
-            <TextField
-              label="Answer to Security Question"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              value={securityAnswer}
-              onChange={(e) => setSecurityAnswer(e.target.value)}
-              error={!!errors.securityAnswer}
-              helperText={errors.securityAnswer}
-            />
             <TextField
               label="Password"
               variant="outlined"
@@ -274,10 +289,7 @@ function Register() {
               error={!!errors.password}
               helperText={errors.password}
             />
-          </div>
-
-          <div className="form-row">
-            <TextField
+               <TextField
               label="Confirm Password"
               variant="outlined"
               type="password"
@@ -290,11 +302,13 @@ function Register() {
             />
           </div>
 
+          
           {/* Submit Button */}
           <Button type="submit" variant="contained" color="primary" fullWidth disabled={Object.keys(errors).length > 0}>
             Register
           </Button>
         </form>
+        <div className="backtologin">Have an account ? <a href="/"><span>Login</span></a></div>
       </div>
     </div>
   );

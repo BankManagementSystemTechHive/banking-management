@@ -54,6 +54,11 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
+background-image: url('/public/images/ATM-IMAGE.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
 }
 
 .homepage-title {

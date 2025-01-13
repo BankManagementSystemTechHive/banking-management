@@ -33,6 +33,7 @@
 .nav-button {
   padding: 10px 15px;
   font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #fff;
   background-color: #444;
   border: none;
@@ -54,16 +55,16 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-background-image: url('/public/images/ATM-IMAGE.avif');
+/* background-image: url('/public/images/background\ image\ 3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-background-image: url('/public/images/ATM-IMAGE.avif');
+background-image: url('/public/images/background\ image\ 3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .homepage-title {
@@ -94,6 +95,8 @@ background-image: url('/public/images/ATM-IMAGE.avif');
 
 .action-buttons button.withdraw {
   background-color: #f44336;
+  background-color: #c9302c;
+  transform: scale(1.05);
 }
 
 .action-buttons button:hover {
@@ -102,10 +105,20 @@ background-image: url('/public/images/ATM-IMAGE.avif');
 
 .balance-display {
   margin-top: 20px;
-  font-size: 1.5rem;
-  color: #000;
-  margin-right: 300px;
+  margin-left: 330px;
+  padding: 8px 20px; /* Add some padding for spacing */
+  font-size: 1.8rem; /* Slightly larger text for emphasis */
+  color:white;
+  font-family: 'Georgia', 'Times New Roman', Times, serif; /* Maintain elegant font */
+  background-color: #631616; 
+  border: 2px solid #ddd; /* Subtle border for definition */
+  border-radius: 6px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  text-align: center; /* Center-align the text */
+  width: 25%;
 }
+
+
 .nav-button.logout {
   margin-top: auto; /* Push the button to the bottom */
   background-color: #d9534f;
@@ -115,8 +128,20 @@ background-image: url('/public/images/ATM-IMAGE.avif');
 
 .nav-button.logout:hover {
   background-color: #c9302c;
-  transform: scale(1.05);
+  transform: scale(1.05); 
 }
+
+/* Add hover effect for the navigation bar */
+.navbar {
+  background-color: #fff; /* Default color */
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #ff0000; /* Red color on hover */
+}
+
+
 
 .homepage-logo {
   text-align: center; /* Center the logo horizontally */
@@ -133,4 +158,18 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   width: 30px; /* Adjust the size as needed */
   height: 30px; /* Adjust the size as needed */
   margin-right: 10px; /* Space between image and text */
+}
+.LOGO{
+  height:40%;
+  width: 100%;
+ 
+
+}
+.logout_button{
+ background-color: #631616;
+ padding: 11px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+ 
 }

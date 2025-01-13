@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 import './home.css';
 
 const HomePage = () => {
@@ -62,28 +61,26 @@ const HomePage = () => {
   };
 
   const handleLogout = () => {
-    // Clear all states (if needed)
     setBalance(0);
     setShowBalance(false);
 
-    // Redirect to the login page or reload
     alert("You have been logged out.");
-    window.location.reload(); // Reload the page to simulate a logout
+    window.location.reload();
   };
 
   return (
     <div className="homepage">
       <nav className="sidebar">
-       
+        
         <ul className="nav-list">
           <button className="nav-button" onClick={handleViewBalance}>
             View Balance
           </button>
-          <button className="nav-button withdraw" onClick={handleWithdraw}>
-            Withdraw
-          </button>
           <button className="nav-button deposit" onClick={handleDeposit}>
             Deposit
+          </button>
+          <button className="nav-button withdraw" onClick={handleWithdraw}>
+            Withdraw
           </button>
           <button className="nav-button transfer" onClick={handleTransfer}>
             Transfer
@@ -94,11 +91,10 @@ const HomePage = () => {
         </button>
       </nav>
       <main className="main-content">
-      <h1 className="homepage-title">
-  <img src="path-to-your-image.jpg" alt="Tech Investments" className="title-image" />
-  Tech Investments
-</h1>
-
+        <h1 className="homepage-title">
+          <img src="public\images\logoNEW.jpg" alt="Tech Investments" className="LOGO" />
+          Tech Investments
+        </h1>
         {showBalance && <p className="balance-display">Current Balance: R{balance}</p>}
       </main>
     </div>

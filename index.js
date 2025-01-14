@@ -3,8 +3,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');  // Import the user routes
+const bcrypt = require('bcryptjs');  // For hashing passwords
+const User = require('./models/User'); // User model (defined below)
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(bodyParser.json());

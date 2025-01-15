@@ -18,19 +18,19 @@ public class AccountService {
     /**
      * Deposit method to add a specified amount to an account's balance.
      *
-     * @param accountNumber The account number where the deposit will be made.
+     * @param accountId The account number where the deposit will be made.
      * @param amount The amount to deposit into the account.
      * @return The updated Account object after the deposit is successful.
      */
-    public Account deposit(String accountNumber, Double amount) {
+    public Account deposit(String accountId, Double amount) {
         // Ensure that the amount to deposit is positive
         if (amount <= 0) {
             throw new IllegalArgumentException("Deposit amount must be greater than zero.");
         }
 
         // Fetch the account by account number, throwing an exception if not found
-        Account account = accountRepository.findByAccountNumber(accountNumber)
-                .orElseThrow(() -> new AccountNotFoundException(accountNumber));
+        Account account = accountRepository.findByAccountId(accountId)
+                .orElseThrow(() -> new AccountNotFoundException(accountId));
 
         // Add the deposit amount to the current balance
         account.setBalance(account.getBalance() + amount);
@@ -54,7 +54,7 @@ public class AccountService {
         }
 
         // Fetch the account by account number, throwing an exception if not found
-        Account account = accountRepository.findByAccountNumber(accountNumber)
+        Account account = accountRepository.findByAccountId(accountNumber)
                 .orElseThrow(() -> new AccountNotFoundException(accountNumber));
 
         // Check if the account has enough balance
@@ -77,8 +77,7 @@ public class AccountService {
      */
     public Double getBalance(String accountNumber) {
         // Fetch the account by account number
-        Account account = accountRepository.findByAccountNumber(accountNumber)
-                .orElseThrow(() -> new AccountNotFoundException(accountNumber));
+        Account account = accountRepository.findByAccountId(accountNumber).orElseThrow(() -> new AccountNotFoundException(accountNumber));
 
         // Return the current balance of the account
         return account.getBalance();
@@ -98,10 +97,10 @@ public class AccountService {
             throw new IllegalArgumentException("Transfer amount must be greater than zero.");
         }
 
-        Account fromAccount = accountRepository.findByAccountNumber(fromAccountNumber)
+        Account fromAccount = accountRepository.findByAccountId(fromAccountNumber)
                 .orElseThrow(() -> new AccountNotFoundException(fromAccountNumber));
 
-        Account toAccount = accountRepository.findByAccountNumber(toAccountNumber)
+        Account toAccount = accountRepository.findByAccountId(toAccountNumber)
                 .orElseThrow(() -> new AccountNotFoundException(toAccountNumber));
 
         // Ensure that the source account has enough balance

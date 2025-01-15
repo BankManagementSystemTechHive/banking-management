@@ -8,13 +8,13 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String accountNumber;
+    private String accountId;
     private Double balance;
 
     public Account() {}
 
-    public Account(String accountNumber, Double balance) {
-        this.accountNumber = accountNumber;
+    public Account(String accountId, Double balance) {
+        this.accountId = accountId;
         this.balance = balance;
     }
 
@@ -22,12 +22,12 @@ public class Account {
         return id;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public Double getBalance() {

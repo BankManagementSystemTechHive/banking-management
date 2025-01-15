@@ -4,31 +4,35 @@ import java.time.LocalDateTime;
 
 public class Deposit {
 
-    private String accountNumber;
+    private String accountId;
     private Double amount;
     private LocalDateTime depositDate;
 
     // Constructor
-    public Deposit(String accountNumber, Double amount, LocalDateTime depositDate) {
-        this.accountNumber = accountNumber;
+    public Deposit(String accountId, Double amount, LocalDateTime depositDate) {
+        this.accountId = accountId;
         this.amount = amount;
         this.depositDate = depositDate;
     }
 
-    // Getters and Setters
-    public String getAccountNumber() {
-        return accountNumber;
+
+    public String getAccountId() {
+
+        return accountId;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setAccountId(String accountId) {
+
+        this.accountId = accountId;
     }
 
     public Double getAmount() {
+
         return amount;
     }
 
     public void setAmount(Double amount) {
+
         this.amount = amount;
     }
 
@@ -43,7 +47,7 @@ public class Deposit {
     @Override
     public String toString() {
         return "Deposit{" +
-                "accountNumber='" + accountNumber + '\'' +
+                "accountId='" + accountId + '\'' +
                 ", amount=" + amount +
                 ", depositDate=" + depositDate +
                 '}';

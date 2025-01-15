@@ -4,37 +4,40 @@ import java.time.LocalDateTime;
 
 public class Transfer {
 
-    private String fromAccountNumber;
-    private String toAccountNumber;
+    private String fromAccountId;
+    private String toAccountId;
     private Double amount;
     private LocalDateTime transferDate;
 
     // Constructor
-    public Transfer(String fromAccountNumber, String toAccountNumber, Double amount, LocalDateTime transferDate) {
-        this.fromAccountNumber = fromAccountNumber;
-        this.toAccountNumber = toAccountNumber;
+    public Transfer(String fromAccountId, String toAccountId, Double amount, LocalDateTime transferDate) {
+        this.fromAccountId = fromAccountId;
+        this.toAccountId = toAccountId;
         this.amount = amount;
         this.transferDate = transferDate;
     }
 
-    // Getters and Setters
-    public String getFromAccountNumber() {
-        return fromAccountNumber;
+
+    public String getFromAccountId() {
+
+        return fromAccountId;
     }
 
-    public void setFromAccountNumber(String fromAccountNumber) {
-        this.fromAccountNumber = fromAccountNumber;
+    public void setFromAccountId(String fromAccountId) {
+        this.fromAccountId = fromAccountId;
     }
 
-    public String getToAccountNumber() {
-        return toAccountNumber;
+    public String getToAccountId() {
+        return toAccountId;
     }
 
-    public void setToAccountNumber(String toAccountNumber) {
-        this.toAccountNumber = toAccountNumber;
+    public void setToAccountId(String toAccountId) {
+
+        this.toAccountId = toAccountId;
     }
 
     public Double getAmount() {
+
         return amount;
     }
 
@@ -47,14 +50,15 @@ public class Transfer {
     }
 
     public void setTransferDate(LocalDateTime transferDate) {
+
         this.transferDate = transferDate;
     }
 
     @Override
     public String toString() {
         return "Transfer{" +
-                "fromAccountNumber='" + fromAccountNumber + '\'' +
-                ", toAccountNumber='" + toAccountNumber + '\'' +
+                "fromAccountId='" + fromAccountId + '\'' +
+                ", toAccountId='" + toAccountId + '\'' +
                 ", amount=" + amount +
                 ", transferDate=" + transferDate +
                 '}';

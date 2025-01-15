@@ -1,8 +1,8 @@
 package com.example.BankingApplication.controller;
 
+import com.example.BankingApplication.exception.AccountNotFoundException;
 import com.example.BankingApplication.model.Account;
 import com.example.BankingApplication.service.AccountService;
-import com.example.BankingApplication.exception.AccountNotFoundException;
 import com.example.BankingApplication.exception.InsufficientFundsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,11 +24,14 @@ public class AccountController {
      * @return The updated account object.
      */
     @PostMapping("/{accountNumber}/deposit")
-    public ResponseEntity<Account> deposit(@PathVariable String accountNumber, @RequestParam Double amount) {
+    public ResponseEntity<Account> deposit(@PathVariable
+                                           String accountNumber, @RequestParam Double amount) {
         try {
             Account updatedAccount = accountService.deposit(accountNumber, amount);
             return ResponseEntity.ok(updatedAccount);
         } catch (AccountNotFoundException ex) {
+
+
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } catch (IllegalArgumentException ex) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

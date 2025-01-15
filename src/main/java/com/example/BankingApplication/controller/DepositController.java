@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.*;
 public class DepositController {
 
     @Autowired
-    private AccountRepository accountRepository;  // Injecting the AccountRepository
+    private final AccountRepository accountRepository;  // Injecting the AccountRepository
+
+    public DepositController(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
 
     // Method to handle deposit requests
-    @PostMapping("/{accountNumber}")
-    public Account deposit(@PathVariable String accountNumber, @RequestParam Double amount) {
+    @PostMapping("/{accountId}")
+    public Account deposit(@PathVariable String accountId, @RequestParam Double amount) {
         // Fetching account based on account number
-        Account account = accountRepository.findByAccountNumber(accountNumber)
+        Account account = accountRepository.findByAccountId(accountId)
                 .orElseThrow(() -> new IllegalArgumentException("Account not found"));
 
         // Update the balance with the deposit amount

@@ -1,0 +1,90 @@
+/* General Styling for the Container */
+.banking-profile {
+    width: 400px; /* Center the form */
+    margin: 50px auto; /* Add spacing from the top */
+    padding: 50px;
+    border: 1px solid #ddd; /* Subtle border for structure */
+    border-radius: 15px; /* Matches login page style */
+    background-color: #fff; /* White background for contrast */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading Styling */
+.banking-profile h2 {
+    font-size: 1.8em; /* Larger font size */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Spacing below the heading */
+    color: #333; /* Dark text color */
+}
+
+/* Label Styling */
+.banking-profile label {
+    display: block; /* Ensure labels are above inputs */
+    font-weight: bold; /* Make labels prominent */
+    margin-bottom: 8px; /* Spacing below labels */
+    color: #333; /* Consistent text color */
+}
+
+/* Input Fields Styling */
+.banking-profile input {
+    width: 100%; /* Full-width inputs */
+    padding: 10px; /* Add padding for better usability */
+    margin-bottom: 20px; /* Spacing below each input */
+    border: 1px solid #ccc; /* Subtle border for structure */
+    border-radius: 10px; /* Matches login page style */
+    font-size: 1em; /* Standard font size */
+    background-color: #f9f9f9; /* Slightly off-white for inputs */
+    transition: border-color 0.3s ease; /* Smooth border changes */
+}
+
+/* Input Fields Focus Styling */
+.banking-profile input:focus {
+    border-color: #8B0000; /* Consistent with login form */
+    outline: none; /* Removes default browser outline */
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.5); /* Adds a subtle glow */
+}
+
+/* Button Styling */
+.banking-profile button {
+    display: block; /* Ensures button stretches full width */
+    width: 100%; /* Full-width button */
+    padding: 12px; /* Comfortable padding for clickability */
+    font-size: 1.1em; /* Slightly larger font for emphasis */
+    color: white; /* White text for contrast */
+    background-color: #8B0000; /* Matches login form's color scheme */
+    border: none; /* Removes default button border */
+    border-radius: 10px; /* Consistent radius styling */
+    cursor: pointer; /* Pointer cursor for better UX */
+    text-transform: none; /* Prevents text capitalization */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button Hover Effect */
+.banking-profile button:hover {
+    background-color: #660000; /* Darker shade for hover */
+}
+
+/* Success/Error Message Styling */
+.message {
+    text-align: center; /* Center the message */
+    margin-top: 15px; /* Spacing from the form */
+    font-size: 1em; /* Standard font size */
+}
+
+.success-message {
+    color: #28a745; /* Green for success */
+    font-weight: bold;
+}
+
+.error-message {
+    color: #dc3545; /* Red for errors */
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banking-profile {
+        width: 90%; /* Use most of the viewport width */
+        padding: 15px; /* Slightly reduced padding */
+    }
+}

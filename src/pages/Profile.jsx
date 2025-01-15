@@ -1,13 +1,13 @@
 // src/components/BankingProfile.js
 
 import React, { useState } from 'react';
+import './Profile.css'
 
 const BankingProfile = () => {
   const [profile, setProfile] = useState({
     name: '',
     email: '',
     accountNumber: '',
-    balance: 0,
   });
 
   const handleChange = (e) => {
@@ -22,6 +22,7 @@ const BankingProfile = () => {
   };
 
   return (
+    <div className="login-container">
     <div className="banking-profile">
       <h2>Banking Profile</h2>   
       
@@ -56,18 +57,9 @@ const BankingProfile = () => {
             required
           />
         </div>
-        <div>
-          <label>Balance:</label>
-          <input
-            type="number"
-            name="balance"
-            value={profile.balance}
-            onChange={handleChange}
-            required
-          />
-        </div>
         <button type="submit">Update Profile</button>
       </form>
+    </div>
     </div>
   );
 };

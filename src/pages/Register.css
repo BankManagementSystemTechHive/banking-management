@@ -1,0 +1,65 @@
+/* Register Form Container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  /* Form Styling */
+  .register-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Form Row Styling for 3 Columns */
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .form-row .MuiTextField-root,
+  .form-row .MuiFormControl-root {
+    flex: 1;
+    max-width: calc(33.33% - 10px);  /* Makes each field take up roughly 1/3 of the row */
+  }
+  
+  /* Error Messages */
+  .error-text {
+    color: red;
+    font-size: 12px;
+  }
+  
+  /* Button Styling */
+  button[type="submit"] {
+    margin-top: 20px;
+    background-color: #8B0000;
+    color: white;
+    &:hover {
+      background-color: #c62828;
+    }
+  }
+
+    span{
+      color:#660000;
+      font-weight: bold;
+      
+    }
+    .backtologin{
+      padding: 10px;
+        }
+        a{
+          text-decoration: none;
+        }

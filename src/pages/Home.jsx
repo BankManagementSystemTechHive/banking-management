@@ -66,16 +66,21 @@ const HomePage = () => {
 
     alert("You have been logged out.");
     window.location.reload();
+    window.location.reload();
   };
 
   return (
     <div className="homepage">
       <nav className="sidebar">
         
+        
         <ul className="nav-list">
         <img src="\images\logoNEW.jpg" alt="Tech Investments" className="LOGO" />
           <button className="nav-button" onClick={handleViewBalance}>
             View Balance
+          </button>
+          <button className="nav-button deposit" onClick={handleDeposit}>
+            Deposit
           </button>
           <button className="nav-button deposit" onClick={handleDeposit}>
             Deposit

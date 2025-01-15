@@ -27,7 +27,7 @@ router.post(
     // Destructure the request body
     const {
       title, fullName, lastName, dob, address, phone, email, nationalId, maritalStatus,
-      gender, accountType, country, initialDeposit, securityQuestion, securityAnswer, password
+      gender, accountType, country, initialDeposit, password
     } = req.body;
 
     try {
@@ -43,7 +43,7 @@ router.post(
       // Create a new user instance
       const newUser = new User({
         title, fullName, lastName, dob, address, phone, email, nationalId, maritalStatus,
-        gender, accountType, country, initialDeposit, securityQuestion, securityAnswer,
+        gender, accountType, country, initialDeposit,
         password: hashedPassword
       });
 

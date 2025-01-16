@@ -62,7 +62,8 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-form">
-        <h1>Login</h1>
+        <img src="/images/logoNEW.jpg" alt="" className='LOGO' />
+        <h1>LOGIN </h1>
         <form noValidate autoComplete="off" onSubmit={handleSubmit}>
           <TextField
             label="Email"

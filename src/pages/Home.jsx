@@ -99,6 +99,9 @@ const HomePage = () => {
           <button className="nav-button" onClick={() => setActiveFeature('transfer')}>
             Transfer
           </button>
+          <a className="profile-button" href='/profile'>
+            View Profile</a>
+          
         </ul>
         <a href="/" className="logout_button">
           Logout

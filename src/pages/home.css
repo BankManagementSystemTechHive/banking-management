@@ -1,7 +1,11 @@
+body{
+  background-color: #333;
+}
 .homepage {
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
+background-color: #333;
 }
 
 .sidebar {
@@ -40,6 +44,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 200px;
 }
 
 .nav-button:hover {
@@ -50,7 +55,7 @@
 .main-content {
   flex: 1;
   padding: 20px;
-  background-color: #fff;
+  background-color: #333;
 background-image: url('/public/images/ATM-IMAGE.avif'); 
   background-size: cover;
   background-repeat: no-repeat;
@@ -130,6 +135,7 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   background-color: #d9534f;
   color: white;
   font-weight: bold;
+  width: 200px;
 }
 
 .nav-button.logout:hover {
@@ -176,7 +182,11 @@ background-image: url('/public/images/ATM-IMAGE.avif');
  padding: 11px;
     border-radius: 10px;
     text-decoration: none;
-    /* color: white; */
+    color: white;
+    width:200px;
+
+
+
  
 }
 .balance-card {
@@ -229,6 +239,26 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  width: 200px;
+}
+.profile-button{
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #484848;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 160px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+}
+.profile-button:hover {
+  background: #631616;
+  transform: scale(1.05);
+
 }
 
 .nav-button:hover {

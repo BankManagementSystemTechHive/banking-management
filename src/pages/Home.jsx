@@ -1,106 +1,111 @@
-
 import React, { useState } from 'react';
 import './home.css';
 
 const HomePage = () => {
   const [balance, setBalance] = useState(0);
-  const [showBalance, setShowBalance] = useState(false);
+  const [activeFeature, setActiveFeature] = useState('welcome'); // State to track active feature
+  const [inputValue, setInputValue] = useState(''); // State for input in cards
 
-  const handleDeposit = () => {
-    const input = prompt("Enter the amount to deposit:");
-    if (input !== null && input.trim() !== "") {
-      const amount = parseInt(input, 10);
-      if (!isNaN(amount) && amount > 0) {
+  const handleTransaction = (type) => {
+    const amount = parseFloat(inputValue);
+  
+    if (isNaN(amount) || amount <= 0) {
+      alert("Please enter a valid positive amount.");
+      return;
+    }
+  
+    switch (type) {
+      case 'deposit':
         setBalance(balance + amount);
-        alert(`Successfully deposited R${amount}. New balance: R${balance + amount}`);
-      } else {
-        alert("Please enter a valid positive amount.");
-      }
-    }
-  };
-
-  const handleWithdraw = () => {
-    const input = prompt("Enter the amount to withdraw:");
-    if (input !== null && input.trim() !== "") {
-      const amount = parseInt(input, 10);
-      if (!isNaN(amount)) {
-        if (amount > 0 && amount <= balance) {
-          setBalance(balance - amount);
-          alert(`Successfully withdrew R${amount}. New balance: R${balance - amount}`);
-        } else if (amount > balance) {
+        alert(`Successfully deposited R${amount}.`);
+        break;
+      case 'withdraw':
+        if (amount > balance) {
           alert("Insufficient balance.");
-        } else {
-          alert("Please enter a positive amount.");
+          return;
         }
-      } else {
-        alert("Invalid input. Please enter a numeric value.");
-      }
-    }
-  };
-
-  const handleTransfer = () => {
-    const input = prompt("Enter the amount to transfer:");
-    if (input !== null && input.trim() !== "") {
-      const amount = parseInt(input, 10);
-      if (!isNaN(amount)) {
-        if (amount > 0 && amount <= balance) {
-          setBalance(balance - amount);
-          alert(`Successfully transferred R${amount}. New balance: R${balance - amount}`);
-        } else if (amount > balance) {
+        setBalance(balance - amount);
+        alert(`Successfully withdrew R${amount}.`);
+        break;
+      case 'transfer':
+        if (amount > balance) {
           alert("Insufficient balance.");
-        } else {
-          alert("Please enter a positive amount.");
+          return;
         }
-      } else {
-        alert("Invalid input. Please enter a numeric value.");
-      }
+        setBalance(balance - amount);
+        alert(`Successfully transferred R${amount}.`);
+        break;
+      default:
+        return;
     }
+  
+    // Automatically switch to the balance card after transaction
+    setInputValue('');
+    setActiveFeature('balance');
+  };
+  
+  const renderFeatureCard = () => {
+    switch (activeFeature) {
+      case 'balance':
+        return (
+          <div className="balance-card">
+            <p className="balance-title">Current Balance</p>
+            <p className="balance-amount">R{balance}</p>
+          </div>
+        );
+      case 'deposit':
+      case 'withdraw':
+      case 'transfer':
+        return (
+          <div className="transaction-card">
+            <p className="transaction-title">{activeFeature.toUpperCase()}</p>
+            <input
+              type="number"
+              className="transaction-input"
+              placeholder={`Enter amount to ${activeFeature}`}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <button
+              className="transaction-button"
+             /// onClick={() => handleTransaction(activeFeature)}
+            >
+              Confirm
+            </button>
+          </div>
+        );
+      default:
+        return <h1 className="homepage-title">Welcome to Your Dashboard</h1>;
+    }
+  
+  
   };
 
-  const handleViewBalance = () => {
-    setShowBalance(true);
-  };
-
-  const handleLogout = () => {
-    // Clear all states (if needed)
-    setBalance(0);
-    setShowBalance(false);
-
-    // Redirect to the login page or reload
-    alert("You have been logged out.");
-    window.location.reload(); // Reload the page to simulate a logout
-  };
 
   return (
     <div className="homepage">
       <nav className="sidebar">
-       
         <ul className="nav-list">
-          <button className="nav-button" onClick={handleViewBalance}>
+          <img src="/images/logoNEW.jpg" alt="Tech Investments" className="LOGO" />
+          <button className="nav-button" onClick={() => setActiveFeature('balance')}>
             View Balance
           </button>
-          <button className="nav-button withdraw" onClick={handleWithdraw}>
-            Withdraw
-          </button>
-          <button className="nav-button deposit" onClick={handleDeposit}>
+          <button className="nav-button" onClick={() => setActiveFeature('deposit')}>
             Deposit
           </button>
-          <button className="nav-button transfer" onClick={handleTransfer}>
+          <button className="nav-button" onClick={() => setActiveFeature('withdraw')}>
+            Withdraw
+          </button>
+          <button className="nav-button" onClick={() => setActiveFeature('transfer')}>
             Transfer
           </button>
         </ul>
-        <button className="nav-button logout" onClick={handleLogout}>
-          Log Out
-        </button>
+        <a href="/" className="logout_button">
+          Logout
+        </a>
       </nav>
-      <main className="main-content">
-      <h1 className="homepage-title">
-  <img src="path-to-your-image.jpg" alt="Tech Investments" className="title-image" />
-  Tech Investments
-</h1>
 
-        {showBalance && <p className="balance-display">Current Balance: R{balance}</p>}
-      </main>
+      <main className="main-content">{renderFeatureCard()}</main>
     </div>
   );
 };

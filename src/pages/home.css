@@ -33,6 +33,7 @@
 .nav-button {
   padding: 10px 15px;
   font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #fff;
   background-color: #444;
   border: none;
@@ -49,30 +50,36 @@
 .main-content {
   flex: 1;
   padding: 20px;
-background-image: url('/public/images/ATM-IMAGE.avif');
+  background-color: #fff;
+background-image: url('/public/images/ATM-IMAGE.avif'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-background-image: url('/public/images/ATM-IMAGE.avif');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
   text-align: center;
-background-image: url('/public/images/ATM-IMAGE.avif');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
+  position: relative;
 }
-
+.balance-card,
+.transaction-card {
+  background: linear-gradient(135deg, #631616, #9e4f4f, #d77d7d);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+ margin-right: 320px;
+  }
 .homepage-title {
-  font-size: 1rem; 
+  font-size: 2rem; 
   color: red;
-  padding-bottom: 300px;
-  margin-right: 1300px;
   display: flex;
   align-items: center;
+  padding-right: 300px;
  
 }
 
@@ -94,6 +101,8 @@ background-image: url('/public/images/ATM-IMAGE.avif');
 
 .action-buttons button.withdraw {
   background-color: #f44336;
+  background-color: #c9302c;
+  transform: scale(1.05);
 }
 
 .action-buttons button:hover {
@@ -102,21 +111,43 @@ background-image: url('/public/images/ATM-IMAGE.avif');
 
 .balance-display {
   margin-top: 20px;
-  font-size: 1.5rem;
-  color: #000;
-  margin-right: 300px;
+  margin-left: 330px;
+  padding: 8px 20px; /* Add some padding for spacing */
+  font-size: 1.8rem; /* Slightly larger text for emphasis */
+  color:white;
+  font-family: 'Georgia', 'Times New Roman', Times, serif; /* Maintain elegant font */
+  background-color: #631616; 
+  border: 2px solid #ddd; /* Subtle border for definition */
+  border-radius: 6px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  text-align: center; /* Center-align the text */
+  width: 25%;
 }
+
+
 .nav-button.logout {
   margin-top: auto; /* Push the button to the bottom */
   background-color: #d9534f;
-  color: #fff;
+  color: white;
   font-weight: bold;
 }
 
 .nav-button.logout:hover {
   background-color: #c9302c;
-  transform: scale(1.05);
+  transform: scale(1.05); 
 }
+
+/* Add hover effect for the navigation bar */
+.navbar {
+  background-color: #fff; /* Default color */
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #ff0000; /* Red color on hover */
+}
+
+
 
 .homepage-logo {
   text-align: center; /* Center the logo horizontally */
@@ -133,4 +164,128 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   width: 30px; /* Adjust the size as needed */
   height: 30px; /* Adjust the size as needed */
   margin-right: 10px; /* Space between image and text */
+}
+.LOGO{
+  height:40%;
+  width: 100%;
+ 
+
+}
+.logout_button{
+ background-color: #631616;
+ padding: 11px;
+    border-radius: 10px;
+    text-decoration: none;
+    /* color: white; */
+ 
+}
+.balance-card {
+  background: linear-gradient(135deg, #631616, #9e4f4f, #d77d7d);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  width: 300px;
+  margin-right: 300px;
+  padding-left: 10px;
+   
+
+}
+
+.balance-card:hover {
+  transform: scale(1.05);
+}
+
+.balance-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.balance-amount {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.main-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  /* background: #007bff; */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-button:hover {
+  background: #631616;
+}
+
+.logout_button {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  color: #ff4d4d;
+  font-weight: bold;
+  text-decoration: none;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  position: relative;
+}
+
+.homepage-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #631616;
+  margin: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.transaction-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.transaction-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.transaction-button {
+  padding: 10px 20px;
+  background-color: #9e4f4f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.transaction-button:hover {
+  background-color: #d77d7d;
+}
+
+.balance-card:hover {
+  transform: scale(1.05);
 }

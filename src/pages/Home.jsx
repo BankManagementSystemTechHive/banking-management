@@ -75,7 +75,7 @@ const HomePage = () => {
           </div>
         );
       default:
-        return <h1 className="homepage-title">Welcome to Your Dashboard</h1>;
+        return <h1 className="homepage-title">Welcome to TechHive Banking</h1>;
     }
   
   
@@ -99,8 +99,8 @@ const HomePage = () => {
           <button className="nav-button" onClick={() => setActiveFeature('transfer')}>
             Transfer
           </button>
-          <a className="profile-button" href='/profile'>
-            View Profile</a>
+          {/* <a className="profile-button" href='/profile'>
+            View Profile</a> */}
           
         </ul>
         <a href="/" className="logout_button">

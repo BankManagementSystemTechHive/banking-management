@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface DepositRepository extends MongoRepository<Deposit, String> {
 
-    List<Deposit> findByAccountId(String accountId);
+    List<Deposit> findByCustomerId(String CustomerId);
 }

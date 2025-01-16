@@ -85,7 +85,7 @@ background-image: url('/public/images/ATM-IMAGE.avif');
   display: flex;
   align-items: center;
   padding-right: 300px;
- 
+  width: 30%;
 }
 
 .action-buttons {

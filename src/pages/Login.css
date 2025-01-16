@@ -23,7 +23,12 @@
     text-align: center;
     color: #333;  
   }
+  .LOGO{
+    height:40%;
+    width: 100%;
+   
   
+  }
   
   .login-form .MuiTextField-root {
     margin-bottom: 20px;

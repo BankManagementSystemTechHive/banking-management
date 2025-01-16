@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import './Register.css';  // Import the custom CSS for Register page
 import { TextField, Button, MenuItem, Select, InputLabel, FormControl } from '@mui/material';  // Material UI components for the form
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  
+
 
 function Register() {
+
+  const navigate = useNavigate(); 
+
   const[title, setTitle] =useState('');
   const [fullName, setFullName] = useState('');
   const [lastName, setLastName] = useState('')
@@ -17,8 +22,6 @@ function Register() {
   const [accountType, setAccountType] = useState('');
   const [country, setCountry] = useState('');
   const [initialDeposit, setInitialDeposit] = useState('');
-  const [securityQuestion, setSecurityQuestion] = useState('');
-  const [securityAnswer, setSecurityAnswer] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -40,8 +43,6 @@ function Register() {
     if(!gender) errors.gender ="Gender is required"
     if (!accountType) errors.accountType = 'Account type is required';
     if (!country) errors.country = 'Country is required';
-    if (!securityQuestion) errors.securityQuestion = 'Security question is required';
-    if (!securityAnswer) errors.securityAnswer = 'Security answer is required';
     if (!password) errors.password = 'Password is required';
     if (!confirmPassword) errors.confirmPassword = 'Confirm password is required';
 
@@ -62,8 +63,8 @@ function Register() {
     }
 
     // National ID validation (optional: adjust as per your needs)
-    if (nationalId && !/^\d{6,12}$/.test(nationalId)) {
-      errors.nationalId = 'National ID should be between 6 and 12 digits';
+    if (nationalId && !/^\d{13}$/.test(nationalId)) {
+      errors.nationalId = 'National ID should be 13 digits';
     }
 
     return errors;
@@ -80,7 +81,7 @@ function Register() {
     if (Object.keys(validationErrors).length > 0) return;
 
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/register', {
+      const response = await axios.post('http://localhost:5000/register', {
         title,
         fullName,
         lastName,
@@ -94,14 +95,19 @@ function Register() {
         accountType,
         country,
         initialDeposit,
-        securityQuestion,
-        securityAnswer,
         password,
       });
+      navigate('/login'); // Ensure you have a route for '/home'
+
       console.log('Registration successful:', response.data);
     } catch (error) {
-      console.error('Registration error:', error);
+      if (error.response && error.response.data) {
+        alert(error.response.data.message); // Show backend error message
+      } else {
+        alert('An error occurred. Please try again later.');
+      }
     }
+    
   };
 
   return (
@@ -304,7 +310,7 @@ function Register() {
 
           
           {/* Submit Button */}
-          <Button type="submit" variant="contained" color="primary" fullWidth disabled={Object.keys(errors).length > 0}>
+          <Button type="submit" variant="contained" color="primary" fullWidth disabled={Object.keys(errors).length = 0}>
             Register
           </Button>
         </form>

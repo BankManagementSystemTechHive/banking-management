@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs'); // For password hashing
 
 const userSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -14,7 +15,8 @@ const userSchema = new mongoose.Schema({
   accountType: { type: String, required: true },
   country: { type: String, required: true },
   initialDeposit: { type: Number, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
 });
 
 const User = mongoose.model('User', userSchema);

@@ -42,10 +42,11 @@ function Login() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/login', {
+      const response = await axios.post('http://localhost:5000/login', {
         email,
         password
       });
+      
       console.log('Login successful:', response.data);
 
       // After successful login, navigate to the /home page

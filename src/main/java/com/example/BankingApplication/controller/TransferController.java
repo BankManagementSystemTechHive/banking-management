@@ -1,19 +1,22 @@
 package com.example.BankingApplication.controller;
 
 import com.example.BankingApplication.exception.AccountNotFoundException;
-import com.example.BankingApplication.service.AccountService;
+import com.example.BankingApplication.service.CustomerService;
 import com.example.BankingApplication.exception.InsufficientFundsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
+
 @RestController
 @RequestMapping("/api/transfer")
 public class TransferController {
 
     @Autowired
-    private AccountService accountService;
+    private CustomerService accountService;
 
     /**
      * Endpoint to transfer money between two accounts.
@@ -28,7 +31,11 @@ public class TransferController {
                                            @RequestParam String toAccountNumber,
                                            @RequestParam Double amount) {
         try {
-            accountService.transfer(fromAccountNumber, toAccountNumber, amount);
+            // Assuming 'amount' is the problematic variable
+            BigDecimal transferAmount = BigDecimal.valueOf(amount);
+
+// Use `transferAmount` instead of `amount`
+
             return ResponseEntity.ok("Transfer successful");
         } catch (AccountNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Account not found");

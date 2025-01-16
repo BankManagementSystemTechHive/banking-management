@@ -1,33 +1,44 @@
+
 package com.example.BankingApplication.controller;
 
-import com.example.BankingApplication.model.Account;
-import com.example.BankingApplication.repository.AccountRepository;
+import com.example.BankingApplication.service.DepositService;
+import com.example.BankingApplication.model.Customer;
+import com.example.BankingApplication.model.Deposit;
+import com.example.BankingApplication.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
-@RequestMapping("/api/deposit")
+import java.math.BigDecimal;
+
+@Controller
 public class DepositController {
 
     @Autowired
-    private final AccountRepository accountRepository;  // Injecting the AccountRepository
+    private CustomerRepository customerRepository; // Inject CustomerRepository
 
-    public DepositController(AccountRepository accountRepository) {
-        this.accountRepository = accountRepository;
-    }
+    @Autowired
+    private DepositService depositService;
 
-    // Method to handle deposit requests
-    @PostMapping("/{accountId}")
-    public Account deposit(@PathVariable String accountId, @RequestParam Double amount) {
-        // Fetching account based on account number
-        Account account = accountRepository.findByAccountId(accountId)
-                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+    // Handle deposit
+    @PostMapping("/deposit")
+    public String handleDeposit(@RequestParam("accountId") String accountId,
+                                @RequestParam("amount") double amount,
+                                Model model) {
+        // Fetch customer from the repository
+        Customer customer = customerRepository.findById(accountId)
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
 
-        // Update the balance with the deposit amount
-        account.setBalance(account.getBalance() + amount);
+        // Convert amount to BigDecimal for precision
+        Double depositAmount = amount;
 
-        // Save the updated account and return it
-        return accountRepository.save(account);
+        // Call the DepositService to process the deposit
+        Deposit deposit = depositService.processDeposit(customer.getId(), depositAmount);
+
+        // Add the deposit amount and success message to the model
+        model.addAttribute("message", "Successfully deposited " + deposit.getAmount());
+        return "deposit-success";  // Ensure this template exists in your resources/templates
     }
 }
-

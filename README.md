@@ -35,7 +35,7 @@ bankmanagementsystemtechhive-banking-management.git/
         ├── Login.jsx      # Login page
         ├── Profile.jsx    # Profile page
         └── Register.jsx   # Registration page
-echnology Stack
+Technology Stack
 Frontend: React (JavaScript, JSX, CSS)
 Backend: [Specify backend technology if applicable]
 Database: [Specify database if applicable]

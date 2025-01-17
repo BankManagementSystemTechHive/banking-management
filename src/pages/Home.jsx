@@ -8,12 +8,12 @@ const HomePage = () => {
 
   const handleTransaction = (type) => {
     const amount = parseFloat(inputValue);
-  
+
     if (isNaN(amount) || amount <= 0) {
       alert("Please enter a valid positive amount.");
       return;
     }
-  
+
     switch (type) {
       case 'deposit':
         setBalance(balance + amount);
@@ -38,12 +38,12 @@ const HomePage = () => {
       default:
         return;
     }
-  
+
     // Automatically switch to the balance card after transaction
     setInputValue('');
     setActiveFeature('balance');
   };
-  
+
   const renderFeatureCard = () => {
     switch (activeFeature) {
       case 'balance':
@@ -68,7 +68,7 @@ const HomePage = () => {
             />
             <button
               className="transaction-button"
-             /// onClick={() => handleTransaction(activeFeature)}
+              onClick={() => handleTransaction(activeFeature)} // Fixed here
             >
               Confirm
             </button>
@@ -77,10 +77,7 @@ const HomePage = () => {
       default:
         return <h1 className="homepage-title">Welcome to TechHive Banking</h1>;
     }
-  
-  
   };
-
 
   return (
     <div className="homepage">
@@ -101,7 +98,6 @@ const HomePage = () => {
           </button>
           {/* <a className="profile-button" href='/profile'>
             View Profile</a> */}
-          
         </ul>
         <a href="/" className="logout_button">
           Logout

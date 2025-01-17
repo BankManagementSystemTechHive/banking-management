@@ -1,137 +1,75 @@
-## Technology Stack
+# Banking Management App
 
-**Frontend:** React (JavaScript, JSX, CSS)
-
-**Backend:**  *(Specify backend technology here, e.g., Node.js with Express, Spring Boot, Django etc.)*
-
-**Database:** *(Specify database technology here, e.g., PostgreSQL, MySQL, MongoDB etc.)*
-
-**Other Tools:**
-
-* React Router for navigation
-* Jest for testing
-* Web Vitals for performance monitoring
-
+## Overview
+The **Banking Management App** is a full-stack project designed to manage banking operations efficiently. It includes features for user registration, login, profile management, and other financial functionalities. The app utilizes a combination of **Java** for backend development and **React** for the front-end interface.
 
 ---
 
-## Installation and Setup
+## Project Structure
 
-Follow these steps to set up the project on your local machine:
+### Backend
+- **Language:** Java  
+- **Framework:** Spring Boot  
+- **Structure:**
+  - `controllers`: Handles API endpoints and business logic.
+  - `models`: Defines the data structures and database interactions.
+  - `config`: Configuration files for the project 
+  - `routes`: Custom routing logic if needed.
 
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/bankmanagementsystemtechhive-banking-management.git
-
-
-├── README.md               # Project documentation
-
-├── package.json            # Project dependencies and scripts
-
-├── public/
-
-│   ├── index.html          # Main HTML file
-
-│   ├── manifest.json       # Web app manifest
-
-│   └── robots.txt          # Robots exclusion protocol
-
-└── src/
-
-    ├── App.css            # Global styles
-
-    ├── App.jsx            # Main application component
-
-    ├── App.test.js        # Unit tests for App component
-
-    ├── index.css          # Root CSS styles
-
-    ├── index.jsx          # Application entry point
-
-    ├── reportWebVitals.js # Performance metrics
-
-    ├── setupTests.js      # Test configuration
-
-    └── pages/             # Application pages
-
-        ├── Home.jsx       # Home page
-
-        ├── Login.jsx      # Login page
-
-        ├── Profile.jsx    # Profile page
-
-        └── Register.jsx   # Registration page
-
-## Banking Management System
-
-This document outlines the technology stack, installation, and usage instructions for the Banking Management System.
-
-## Technology Stack
-
-**Frontend:** React (JavaScript, JSX, CSS)
-
-**Backend:** *(Specify backend technology here, e.g., Node.js with Express, Spring Boot, Django, etc.)*
-
-**Database:** *(Specify database technology here, e.g., PostgreSQL, MySQL, MongoDB, etc.)*
-
-**Other Tools:**
-
-* React Router for navigation
-
-* Jest for testing
-
-* Web Vitals for performance monitoring
+### Frontend
+- **Language:** JavaScript  
+- **Framework:** React  
+- **Structure:**
+  - `pages`: Contains React components for the various pages:
+    - `Home.jsx` and `home.css`: Landing page.
+    - `Login.jsx` and `Login.css`: User login page.
+    - `Register.jsx` and `Register.css`: User registration page.
+  - `App.jsx`: Main entry point for the React application.
 
 ---
 
-## Installation and Setup
+## Setup Instructions
 
-Follow these steps to set up the project on your local machine:
+### Prerequisites
+- Java Development Kit (JDK) 
+- Node.js 
+- MongoDB Database 
 
-1. **Clone the Repository:**
+  ## Frontend Setup
+   
+Navigate to the
+banking-management-app/bank-app folder.
 
-   ```bash
-
-   git clone https://github.com/yourusername/bankmanagementsystemtechhive-banking-management.git
-
-Install Dependencies:
-
-(Add instructions here depending on your backend and frontend technologies. For example:
-
-bash
-
-Copy
-
-# Frontend dependencies (using npm)
-
-cd client  // or the appropriate directory
+## Install dependencies:
 
 npm install
 
-# Backend dependencies (example using npm for a Node.js backend)
 
-cd server  // or the appropriate directory
+## Start the React development server:
 
-npm install
+npm start
 
-)
 
-Configure Environment Variables:
+### Technologies Used
 
-(If applicable, explain how to set up environment variables, perhaps using a .env file, to store sensitive information like database credentials.)
+## Backend
 
-Start the Application:
+Java
+Spring Boot
+Maven
 
-(Add instructions on how to start both the backend and frontend servers. This might involve running separate commands.)
+## Frontend
 
-Usage Instructions
+React
+HTML/CSS
+JavaScript
 
-(Add detailed instructions on how to use the application. Include screenshots if possible. Explain user roles, features, and workflows.)
+## Database
 
-Contributing
+MongoDB
 
-(Add guidelines for contributing to the project, such as forking, creating pull requests, and coding style conventions.)
+### demo
 
-License
+https://github.com/user-attachments/assets/04905bc9-03b6-4073-8f04-dc936a7aa324
+
 

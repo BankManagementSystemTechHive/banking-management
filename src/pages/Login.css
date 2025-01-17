@@ -1,0 +1,83 @@
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;  
+  }
+  
+ 
+  .login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+  }
+  
+  
+  .login-form h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;  
+  }
+  .LOGO{
+    height:40%;
+    width: 100%;
+   
+  
+  }
+  
+  .login-form .MuiTextField-root {
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 10px;  
+  }
+  
+ 
+  .MuiInputBase-root.MuiOutlinedInput-root {
+    border-radius: 10px;  
+    background-color: #fff; 
+  }
+  
+  .MuiInputBase-root.MuiOutlinedInput-root.Mui-focused {
+    border-color: #8B0000; 
+  }
+  
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #8B0000;  
+  }
+
+  .MuiFormLabel-root {
+    color: #333;  
+  }
+  
+
+  .login-form .MuiButton-root {
+    background-color: #8B0000;  
+    color: white;
+    padding: 10px;
+    border-radius: 10px;  
+    width: 100%;
+    font-size: 1.1em;
+    text-transform: none;  
+    margin-top: 20px;
+  }
+  
+  .login-form .MuiButton-root:hover {
+    background-color: #660000;  
+  }
+  span{
+    color:#660000;
+    font-weight: bold;
+    
+  }
+  .registerField{
+padding: 10px;
+  }
+  a{
+    text-decoration: none;
+  }
+  
